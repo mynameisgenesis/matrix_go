@@ -1,11 +1,15 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"net/http"
 )
 
 func main(){
+	port := flag.String("port", ":8080", "HTTP port")
+	flag.Parse()
+
 	fileServer := http.FileServer(http.Dir("./ui/static"))
 	mux := http.NewServeMux()
 
@@ -13,8 +17,8 @@ func main(){
 
 	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))
 	
-	log.Printf("Starting server on port :8080")
+	log.Printf("Starting server on port %s", *port)
 
-	err := http.ListenAndServe(":8080", mux)
+	err := http.ListenAndServe(*port, mux)
 	log.Fatal(err)
 }
