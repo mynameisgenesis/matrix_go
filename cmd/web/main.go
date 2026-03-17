@@ -7,7 +7,7 @@ import (
 )
 
 func main(){
-	port := flag.String("port", ":8080", "HTTP port")
+	port := flag.String("port", ":4000", "HTTP port")
 	flag.Parse()
 
 	fileServer := http.FileServer(http.Dir("./ui/static"))
