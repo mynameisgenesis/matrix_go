@@ -1,5 +1,6 @@
 /* ✅ Mobile first — add complexity upward */
 body {
+  background-color: black;
   display: grid;
   grid-template-columns: 1fr;
 }
