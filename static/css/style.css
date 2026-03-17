@@ -1,0 +1,41 @@
+:root {
+  --primary-color: #24d12c;
+}
+@font-face {
+  font-family: "newregular";
+  src: url("../fonts/whiterabbit-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: black;
+  font-size: 2em;
+  font-family: "newregular";
+  color: var(--primary-color);
+}
+
+#console-text-area {
+  margin-top: 5%;
+  margin-left: 4%;
+  width: 100%;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background-color: #00ff00;
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  animation: blink 0.5s step-start infinite;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
