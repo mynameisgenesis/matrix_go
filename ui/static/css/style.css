@@ -1,3 +1,6 @@
+:root {
+  --primary-color: #24d12c;
+}
 @font-face {
   font-family: "newregular";
   src: url("/static/fonts/whiterabbit-webfont.woff") format("woff");
@@ -9,9 +12,7 @@ body {
   background-color: black;
   font-size: 2em;
   font-family: "newregular";
-  color: #24d12c;
-  /* display: grid;
-  grid-template-columns: 1fr; */
+  color: var(--primary-color);
 }
 
 #console-text-area {
@@ -20,14 +21,21 @@ body {
   width: 100%;
 }
 
-/* @media (min-width: 768px) {
-  body {
-    grid-template-columns: repeat(2, 1fr);
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background-color: #00ff00;
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  animation: blink 0.5s step-start infinite;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
 }
-
-@media (min-width: 1024px) {
-  body {
-    grid-template-columns: repeat(3, 1fr);
-  }
-} */
